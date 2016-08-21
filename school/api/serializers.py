@@ -10,3 +10,12 @@ class SchoolSerializer(serializers.ModelSerializer):
             'school_branch_area',
             'school_id',
         ]
+
+class SchoolCreateSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = School
+        fields = [
+            'school_name',
+            'school_branch_area',
+            'school_id',
+        ]

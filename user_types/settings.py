@@ -30,6 +30,8 @@ ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'accounts.User_type_1'
 # Application definition
 
+AUTHENTICATION_BACKENDS = ( 'accounts.backends.User_type_1_AUTH', )
+
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +41,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'accounts',
     'school',
+    'rest_framework',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,7 +61,7 @@ ROOT_URLCONF = 'user_types.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

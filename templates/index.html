@@ -1,0 +1,10 @@
+<html>
+<head>
+  <title>Index Element</title>
+</head>
+<p>Correct Thing</p>
+<form action="{% url 'login_view' %}" method='POST'>{% csrf_token %}
+{{ form.as_p }}
+<input type=submit value="Submit"/>
+</form>
+</html>
